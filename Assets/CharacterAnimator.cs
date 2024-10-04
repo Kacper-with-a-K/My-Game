@@ -24,6 +24,7 @@ public class CharacterAnimator : MonoBehaviour
             animator.SetBool("walk", true);
         }
 
+
         else if (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift))
         {
             animator.SetBool("run", true);
