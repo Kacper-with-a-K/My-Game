@@ -8,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] float moveSpeed = 10f;
-    Vector3 camForward = cam.forward;
-    Vector3 camRight = cam.right;
+    
 
     [SerializeField] Transform cam;
     
@@ -30,9 +29,10 @@ public class PlayerMovement : MonoBehaviour
     {
         float horInput = Input.GetAxisRaw("Horizontal") * moveSpeed;
         float verInput = Input.GetAxisRaw("Vertical") * moveSpeed;
-        
 
-        
+
+        Vector3 camForward = cam.forward;
+        Vector3 camRight = cam.right;
 
         camForward.Normalize();
         camRight.Normalize();
