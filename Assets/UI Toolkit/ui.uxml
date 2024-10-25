@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/VendShopUI.uss?fileID=7433441132597879392&amp;guid=d2b136c9179de4246a18573c75bb8851&amp;type=3#VendShopUI" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="header" class="header" style="-unity-font: url(&quot;project://database/Assets/edosz.ttf?fileID=12800000&amp;guid=ec23b453d650e6d4bb1ea38a180496ea&amp;type=3#edosz&quot;); color: rgb(255, 255, 255); font-size: 40px;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="header2" class="header" style="-unity-font: url(&quot;project://database/Assets/edosz.ttf?fileID=12800000&amp;guid=ec23b453d650e6d4bb1ea38a180496ea&amp;type=3#edosz&quot;); font-size: 40px; color: rgb(255, 255, 255);" />
+        <ui:ProgressBar value="22" title="my-progress" class="header" style="color: rgb(0, 0, 0); -unity-background-image-tint-color: rgb(255, 0, 0); background-color: rgba(255, 0, 0, 0); top: auto; max-width: 500px;" />
+        <ui:ProgressBar value="22" title="my-progress" style="max-width: 400px; justify-content: flex-start; flex-direction: column; opacity: 1; background-image: none;" />
+    </ui:VisualElement>
+</ui:UXML>
