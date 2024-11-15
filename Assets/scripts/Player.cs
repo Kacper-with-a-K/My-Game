@@ -5,16 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject Inventory;
-
     public bool InventoryOpen;
     public int maxHealth;
-    public healthbar healthbar;
-
     public int curHealth;
+    public healthbar healthbar;
+    public int maxHeat;
+    public int curHeat;
+
+
+    
     // Start is called before the first frame update
     void Start()
     {
         curHealth = maxHealth;
+        curHeat = maxHeat;
     }
 
 
