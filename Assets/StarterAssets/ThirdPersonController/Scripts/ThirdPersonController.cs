@@ -1,4 +1,4 @@
- using UnityEngine;
+﻿ using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -347,8 +347,6 @@ namespace StarterAssets
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
         }
-
-        
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
