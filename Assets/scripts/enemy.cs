@@ -13,11 +13,13 @@ public class enemy : MonoBehaviour
 
     public bool isBlocking = false;
 
+    public Animator hurt;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        hurt = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,19 +31,34 @@ public class enemy : MonoBehaviour
     public void OnTriggerEnter(Collider collider)
     {
         Debug.Log("Hit!!!");
-        // if (collider.gameObject.tag == "Attack")
-        // {
-        //     if (isBlocking == false)
-        // {
-        //     hitpoints -= damage;
-        // }
+        if (collider.gameObject.tag == "Attack")
+        {
+        if (isBlocking == false)
+        {
+            hurt.SetTrigger("hurt");
+            hitpoints -= damage;
+        }
 
-        // if (isBlocking == true)
-        // {
-        //     hitpoints -= (damage - 1); 
-        // }
+        if (isBlocking == true)
+        {
+            hitpoints -= (damage - 1); 
+        }
            
-        // }
+        }
+
+        else if(collider.gameObject.tag == "HeavyAttack")
+        {
+        if (isBlocking == false)
+        {
+            hurt.SetTrigger("BigHurt");
+            hitpoints -= damage;
+        }
+
+        if (isBlocking == true)
+        {
+            hitpoints -= (damage - 1); 
+        }
+        }
         damaged();
     }
 

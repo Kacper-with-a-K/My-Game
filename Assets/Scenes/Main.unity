@@ -243,6 +243,88 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5122099526521285423, guid: 52c6264ec9f686245aa9dd0e49d45d0f, type: 3}
+--- !u!1 &21624656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187503254755760679, guid: ac23f03ab2778ad479d54a67552ff9ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1154378825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &21624657 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4895534732621109991, guid: ac23f03ab2778ad479d54a67552ff9ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1154378825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &21624659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21624656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17c5e1204b51f84890b76f669fa26f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 10
+  damage: 1
+  isDead: 0
+  isBlocking: 0
+  hurt: {fileID: 21624657}
+--- !u!143 &21624660
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21624656}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.3
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &21624661
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21624656}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &28720641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8801928107544654603, guid: 40a2d3e8e4099154e896d8a135a7fcf1,
@@ -4215,7 +4297,7 @@ GameObject:
   - component: {fileID: 609383820}
   m_Layer: 8
   m_Name: FinishAttack2
-  m_TagString: Attack
+  m_TagString: HeavyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7281,7 +7363,7 @@ GameObject:
   - component: {fileID: 935882929}
   m_Layer: 8
   m_Name: FinishAttack3
-  m_TagString: Attack
+  m_TagString: HeavyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9052,6 +9134,18 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2187503254755760679, guid: ac23f03ab2778ad479d54a67552ff9ec,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 21624661}
+    - targetCorrespondingSourceObject: {fileID: 2187503254755760679, guid: ac23f03ab2778ad479d54a67552ff9ec,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 21624660}
+    - targetCorrespondingSourceObject: {fileID: 2187503254755760679, guid: ac23f03ab2778ad479d54a67552ff9ec,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 21624659}
     - targetCorrespondingSourceObject: {fileID: 1882992484131562259, guid: ac23f03ab2778ad479d54a67552ff9ec,
         type: 3}
       insertIndex: -1
@@ -9414,6 +9508,7 @@ GameObject:
   - component: {fileID: 1193248092}
   - component: {fileID: 1193248091}
   - component: {fileID: 1193248096}
+  - component: {fileID: 1193248097}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -9437,6 +9532,7 @@ MonoBehaviour:
   damage: 10
   isDead: 0
   isBlocking: 0
+  hurt: {fileID: 0}
 --- !u!136 &1193248092
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9548,6 +9644,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1193248097
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193248090}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1194282970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9832,7 +9955,7 @@ GameObject:
   - component: {fileID: 1209953763}
   m_Layer: 8
   m_Name: FinishAttack
-  m_TagString: Attack
+  m_TagString: HeavyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
