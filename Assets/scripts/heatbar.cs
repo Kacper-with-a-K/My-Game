@@ -9,9 +9,9 @@ public class heatbar : MonoBehaviour
     
     public Image Heatbar;
 
-    public void UpdateHeat(float currentHealth, float maxHealth)
+    public void UpdateHeat(float fraction)
     {
-        Heatbar.fillAmount = (currentHealth/maxHealth);
+        Heatbar.fillAmount = fraction;
     }
 
     

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public int maxHealth;
     public int curHealth;
     public healthbar healthbar;
+    public heatbar heatbar;
     public int maxHeat;
     public int curHeat;
 
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         seeInventory();
+        healthbar.UpdateHealth((float)curHealth / (float)maxHealth);
+        heatbar.UpdateHeat((float)curHeat  / (float)maxHeat);
     }
 
     public void seeInventory()

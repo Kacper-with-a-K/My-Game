@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Attack
   - HeavyAttack
+  - HeatAction
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - ground
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Attack
   - 
   - 
   - 

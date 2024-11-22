@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class playerAttack : MonoBehaviour
 {
-
+    public Player player;
     public Animator Attack;
+    public GameObject heatAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,11 @@ public class playerAttack : MonoBehaviour
         else if (Input.GetMouseButtonDown(1))
         {
             Attack.SetTrigger("HeavyAttack");
+        }
+
+        else if (Input.GetMouseButtonDown(1) && player.curHeat >= 75)
+        {
+            heatAttack.SetActive(true);
         }
     }
 
