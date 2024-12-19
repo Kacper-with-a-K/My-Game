@@ -30,14 +30,7 @@ public class HeatAction : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "Enemy")
-        {
-            if (Input.GetMouseButton(1))
-            {
-                heatMove = enemy.hurt.GetComponent<Animator>();
-                enemy.hurt.SetBool("Heat", true);
-            }
-        }
+        
     }
 
 

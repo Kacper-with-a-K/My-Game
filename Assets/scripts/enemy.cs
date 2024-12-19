@@ -5,41 +5,54 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
 
-
+    public enemyHealth healthbar;
     public int hitpoints;
-
+   
     public int damage;
 
     public bool isDead;
 
+    public Player player;
 
+    public GameObject money;
     public bool isBlocking = false;
 
     public Animator hurt;
 
-
+    public AudioSource smallHit;
+    public AudioSource bigHit;
+    public AudioSource megaHit;
 
     // Start is called before the first frame update
     void Start()
     {
         hurt = GetComponent<Animator>();
+  
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(hitpoints <= 0)
+        {
+            isDead = true;
+            hurt.SetBool("dead", true);
+        }
+        
     }
 
     public void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Hit!!!");
+        
         if (collider.gameObject.tag == "Attack")
         {
             if (isBlocking == false)
             {
+                Debug.Log("Hit!!!");
                 hurt.SetTrigger("hurt");
                 hitpoints -= damage;
+                player.curHeat += 3;
+                smallHit.Play();
             }
 
             if (isBlocking == true)
@@ -55,6 +68,8 @@ public class enemy : MonoBehaviour
             {
                 hurt.SetTrigger("BigHurt");
                 hitpoints -= (damage * 2);
+                player.curHeat += 5;
+                bigHit.Play();
             }
 
             if (isBlocking == true)
@@ -66,12 +81,20 @@ public class enemy : MonoBehaviour
         else if (collider.gameObject.tag == "HeatAction")
         {
             hurt.SetTrigger("Heat");
-            StartCoroutine(HeatActionDamage(8f));
+            hitpoints -= (damage * 3);
+            megaHit.Play();
         }
-        damaged();
+        //damaged();
     }
 
-    
+    public void Dead()
+    {
+        Destroy(gameObject);
+    }
+    public void dropMoney()
+    {
+        Instantiate(money, transform.position, transform.rotation);
+    }
     public void damaged()
     {
         
@@ -88,9 +111,5 @@ public class enemy : MonoBehaviour
         }
     }
 
-    public IEnumerator HeatActionDamage(float time)
-    {
-        yield return new WaitForSeconds(time);
-        hitpoints -= (damage * 10);
-    }
+    
 }

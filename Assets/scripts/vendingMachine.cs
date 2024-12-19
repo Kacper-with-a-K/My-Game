@@ -21,6 +21,8 @@ public class vendingMachine : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 InteractUI.SetActive(false);
                 VendShopUI.SetActive(true);
                 interui = false;
@@ -42,8 +44,10 @@ public class vendingMachine : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         InteractUI.SetActive(false);
-        VendShopUI?.SetActive(false);
+        VendShopUI.SetActive(false);
         interui = false;
     }
 }

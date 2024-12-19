@@ -21,6 +21,8 @@ public class shop : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 InteractUI.SetActive(false);
                 ShopUI.SetActive(true);
                 interui = false;
@@ -42,6 +44,8 @@ public class shop : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         InteractUI.SetActive(false);
         ShopUI?.SetActive(false);
         interui = false;

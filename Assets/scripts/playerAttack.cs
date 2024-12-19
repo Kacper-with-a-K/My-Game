@@ -7,11 +7,12 @@ public class playerAttack : MonoBehaviour
 {
     public Player player;
     public Animator Attack;
-    public GameObject heatAttack;
+    
     // Start is called before the first frame update
     void Start()
     {
         Attack = GetComponent<Animator>();
+        player = GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -29,10 +30,7 @@ public class playerAttack : MonoBehaviour
             Attack.SetTrigger("HeavyAttack");
         }
 
-        else if (Input.GetMouseButtonDown(1) && player.curHeat >= 75)
-        {
-            heatAttack.SetActive(true);
-        }
+        
     }
 
    
